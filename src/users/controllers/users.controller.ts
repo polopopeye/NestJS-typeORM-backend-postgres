@@ -20,6 +20,10 @@ export class UsersController {
   findAll() {
     return this.usersService.findAll();
   }
+  @Get('tasks')
+  tasks() {
+    return this.usersService.getTasks();
+  }
 
   @Get(':id')
   get(@Param('id', ParseIntPipe) id: number) {
