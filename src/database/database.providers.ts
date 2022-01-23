@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+
 import { ConfigService, ConfigType } from '@nestjs/config';
 import config from 'src/config';
 import { createConnection } from 'typeorm';

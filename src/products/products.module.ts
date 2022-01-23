@@ -7,11 +7,17 @@ import { ProductsService } from './services/products.service';
 import { BrandsService } from './services/brands.service';
 import { CategoriesService } from './services/categories.service';
 import { DatabaseModule } from 'src/database/database.module';
+import { ProductProviders } from './providers/product.providers';
 
 @Module({
   imports: [DatabaseModule],
   controllers: [ProductsController, CategoriesController, BrandsController],
-  providers: [ProductsService, BrandsService, CategoriesService],
+  providers: [
+    ProductsService,
+    BrandsService,
+    CategoriesService,
+    ...ProductProviders,
+  ],
   exports: [ProductsService],
 })
 export class ProductsModule {}
